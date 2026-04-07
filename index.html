@@ -79,6 +79,7 @@
       padding: 0 48px;
       z-index: 100;
       transition: background 0.4s ease, border-color 0.4s ease;
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
     }
 
@@ -319,7 +320,6 @@
       padding: 0 24px;
     }
 
-    /* Hidden file input overlay */
     .profile-upload-input {
       display: none;
     }
@@ -489,6 +489,12 @@
       color: var(--text2);
     }
 
+    .skill-desc {
+      font-size: 0.88rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
     /* ===== EXPERIENCE ===== */
     .exp-list { display: flex; flex-direction: column; gap: 0; }
 
@@ -538,7 +544,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2);
       gap: 2px;
       background: var(--border);
       border: 1px solid var(--border);
@@ -580,6 +586,36 @@
       line-height: 1.7;
       color: var(--text2);
       margin-bottom: 20px;
+    }
+
+    /* ===== Excel Download Button ===== */
+    .excel-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #1D6F42;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .excel-download-btn:hover {
+      background: #155534;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      color: #fff;
+    }
+
+    .excel-download-btn i {
+      font-size: 1rem;
     }
 
     /* ===== EDUCATION ===== */
@@ -796,7 +832,7 @@
 
       .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
+        height: auto;
       }
 
       .hero-left {
@@ -877,14 +913,9 @@
         <div class="profile-frame">
           <div class="profile-frame-border"></div>
           <div class="profile-img-wrap" id="profileWrap">
-
-            <!-- ✅ YOUR PHOTO IS HERE — replace the src value below -->
             <img id="profileImg"
                  src="profile.jpg"
-                 alt="Omkar Ghodake"
-                 style="display:block; width:100%; height:100%; object-fit:cover;" />
-            <!-- ================================================== -->
-
+                 alt="Omkar Ghodake" />
             <div class="profile-upload-overlay">
               <i class="fas fa-camera"></i>
             </div>
@@ -902,7 +933,7 @@
           <div class="stat-label">Certs</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">2+</div>
+          <div class="stat-value">3+</div>
           <div class="stat-label">Projects</div>
         </div>
       </div>
@@ -922,7 +953,7 @@
         <div class="skill-card">
           <div class="skill-icon">🧫</div>
           <div class="skill-name">Plant Tissue Culture</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">Micropropagation, callus induction, explant preparation, and aseptic technique for plant regeneration systems.</p>
+          <p class="skill-desc">Micropropagation, callus induction, explant preparation, and aseptic technique for plant regeneration systems.</p>
           <div class="skill-tags">
             <span class="tag">Micropropagation</span>
             <span class="tag">Callus Culture</span>
@@ -933,7 +964,7 @@
         <div class="skill-card">
           <div class="skill-icon">🌱</div>
           <div class="skill-name">Biofertilizers & Agri-Bio</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">Nitrogen fixation, mycorrhizal applications, biopesticide development, and sustainable agriculture research.</p>
+          <p class="skill-desc">Nitrogen fixation, mycorrhizal applications, biopesticide development, and sustainable agriculture research.</p>
           <div class="skill-tags">
             <span class="tag">N-Fixation</span>
             <span class="tag">Mycorrhiza</span>
@@ -944,7 +975,7 @@
         <div class="skill-card">
           <div class="skill-icon">🔬</div>
           <div class="skill-name">Microbiology Techniques</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">Gram staining, culture media preparation, microbial isolation, colony identification, and lab safety protocols.</p>
+          <p class="skill-desc">Gram staining, culture media preparation, microbial isolation, colony identification, and lab safety protocols.</p>
           <div class="skill-tags">
             <span class="tag">Gram Staining</span>
             <span class="tag">Media Prep</span>
@@ -955,7 +986,7 @@
         <div class="skill-card">
           <div class="skill-icon">🧬</div>
           <div class="skill-name">Molecular Biology</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">PCR, gel electrophoresis, DNA extraction, and basic bioinformatics tools for sequence analysis.</p>
+          <p class="skill-desc">PCR, gel electrophoresis, DNA extraction, and basic bioinformatics tools for sequence analysis.</p>
           <div class="skill-tags">
             <span class="tag">PCR</span>
             <span class="tag">Gel Electrophoresis</span>
@@ -966,7 +997,7 @@
         <div class="skill-card">
           <div class="skill-icon">🐍</div>
           <div class="skill-name">Data Analytics & Python</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">Python scripting, data visualization, and ML basics applied to healthcare data interpretation and diagnostics.</p>
+          <p class="skill-desc">Python scripting, data visualization, and ML basics applied to healthcare data interpretation and diagnostics.</p>
           <div class="skill-tags">
             <span class="tag">Python</span>
             <span class="tag">Data Viz</span>
@@ -977,7 +1008,7 @@
         <div class="skill-card">
           <div class="skill-icon">📊</div>
           <div class="skill-name">Research & Documentation</div>
-          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;">Scientific report writing, literature review, experimental design, and data interpretation for academic publications.</p>
+          <p class="skill-desc">Scientific report writing, literature review, experimental design, and data interpretation for academic publications.</p>
           <div class="skill-tags">
             <span class="tag">Report Writing</span>
             <span class="tag">Literature Review</span>
@@ -997,13 +1028,11 @@
         <div class="section-line"></div>
       </div>
 
-
-
         <div class="exp-item reveal">
           <div class="exp-period">June 2025</div>
           <div class="exp-body">
-            <div class="exp-role">One month internship   </div>
-            <div class="exp-org">Seema Biotech Pvt.Ltd, Talsande   </div>
+            <div class="exp-role">One month internship</div>
+            <div class="exp-org">Seema Biotech Pvt.Ltd, Talsande</div>
             <div class="exp-desc">Acquired hands-on training in plant tissue culture techniques — including media preparation, aseptic handling, and micropropagation of economically important crops — while assisting in biofertilizer production and soil and water testing laboratories, where I analysed key parameters such as pH, salinity, micro- and macro-nutrient composition, and microbial load. Developed a practical understanding of laboratory protocols, instrumentation, and quality assurance standards in biotechnology applications, with exposure to GMP and GLP guidelines.</div>
           </div>
         </div>
@@ -1022,7 +1051,6 @@
 
       <div class="projects-grid reveal">
 
-
         <div class="project-card">
           <div class="project-num">01</div>
           <div class="project-title">ML-Assisted Healthcare Data Analysis</div>
@@ -1036,14 +1064,32 @@
 
         <div class="project-card">
           <div class="project-num">02</div>
-          <div class="project-title">Touch Sensor using 555 Timer IC </div>
-          <div class="project-desc">•	Designed and implemented a touch-sensitive switch using the 555 Timer IC configured as a monostable multivibrator.<br>•	Developed a working circuit where a touch plate triggers the 555 Timer to generate a stable pulse output.<br>•	 Integrated an NPN transistor with the circuit to drive an LED indicator, demonstrating signal amplification and switching.</div>
+          <div class="project-title">Touch Sensor using 555 Timer IC</div>
+          <div class="project-desc">Designed and implemented a touch-sensitive switch using the 555 Timer IC configured as a monostable multivibrator. Developed a working circuit where a touch plate triggers the 555 Timer to generate a stable pulse output. Integrated an NPN transistor with the circuit to drive an LED indicator, demonstrating signal amplification and switching.</div>
           <div class="skill-tags">
             <span class="tag">555 Timer IC</span>
             <span class="tag">Circuit Design</span>
             <span class="tag">Electronics</span>
           </div>
         </div>
+
+
+        <div class="project-card">
+          <div class="project-num">03</div>
+          <div class="project-title">WORKING STUDENT DASHBOARD WITH MICROSOFT EXCEL</div>
+          <div class="project-desc">Created a comprehensive dashboard in Microsoft Excel to visualize and analyze working student data, including attendance, performance metrics, and feedback. Utilized pivot tables, charts, and conditional formatting to provide actionable insights and support data-driven decision-making.</div>
+          <div class="skill-tags">
+            <span class="tag">Microsoft Excel</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">Data Analysis</span>
+ 
+          </div>
+
+          <a href="dashboard.xlsx" download class="excel-download-btn">
+            <i class="fas fa-file-excel"></i> Download Dashboard (.xlsx)
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1105,12 +1151,10 @@
             <img src="ropar.jpeg" alt="Comptational Vaccine Technology - IIT Ropar" loading="lazy">
           </div>
           <div class="cert-info">
-            <div class="cert-name">Comptational Vaccine Technology </div>
+            <div class="cert-name">Comptational Vaccine Technology</div>
             <div class="cert-meta">Edu Fabrica and IIT Ropar &nbsp;·&nbsp; Feb 2024</div>
           </div>
         </a>
-
-
 
         <a href="cert-lpu-data.jpg" target="_blank" class="cert-card">
           <div class="cert-img-wrap">
@@ -1140,7 +1184,7 @@
           <a href="tel:+917020345891">
             <i class="fas fa-phone"></i> +91 70203 45891
           </a>
-          <a href="https://linkedin.com/in/omkarghodake2005" target="_blank">
+          <a href="https://linkedin.com/in/omkarghodake2005" target="_blank" rel="noopener">
             <i class="fab fa-linkedin"></i> linkedin.com/in/omkarghodake2005
           </a>
           <span>
@@ -1193,22 +1237,21 @@
     const profileImg = document.getElementById('profileImg');
     const profilePlaceholder = document.getElementById('profilePlaceholder');
 
-    profileWrap.addEventListener('click', () => photoInput.click());
+    profileWrap.addEventListener('click', () => photoInput && photoInput.click());
 
-    photoInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        profileImg.src = ev.target.result;
-        profileImg.style.display = 'block';
-        profilePlaceholder.style.display = 'none';
-      };
-      reader.readAsDataURL(file);
-    });
+    if (photoInput) {
+      photoInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          profileImg.src = ev.target.result;
+          profileImg.style.display = 'block';
+          if (profilePlaceholder) profilePlaceholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      });
+    }
   </script>
 </body>
-
 </html>
-
-
